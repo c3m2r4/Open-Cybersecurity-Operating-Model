@@ -1,0 +1,6 @@
+mkdocs==1.5.2
+mkdocs-material==10.3.0
+pymdown-extensions==9.7.0
+mdx-wikilinks==0.5.2
+mkdocs-git-revision-date-localized-plugin==0.12.0
+mkdocs-exclude==1.2.2
