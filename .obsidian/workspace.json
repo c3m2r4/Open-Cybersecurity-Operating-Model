@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "3ab991cbccd52b68",
+    "type": "split",
+    "children": [
+      {
+        "id": "9277fb252618bada",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3863f67dc3a0340a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03 - INFORMATION SECURITY/Email Security/Email Security Domain.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Email Security Domain"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "616e082913b35e07",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c5250bb9b55d71b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88390a3cc1e70f07",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e4b58e6797c0abae",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ca51ee763654e120",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "694c614b7e780c66",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c56c29cd82d66b0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "81e4fbf0e3cefcd7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "🎯 MYTHIC C2 — COMPLETE OPERATION CYPHER-KNIFE RUNBOOK.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "85e163d0316378c9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Untitled.base",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "f0584520a23a7450",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b1f5e6624b284b68",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "7436989440684b05",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "03 - INFORMATION SECURITY/Email Security/Email Security Domain.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "3863f67dc3a0340a",
+  "lastOpenFiles": [
+    "06 - DEFENSIVE SECURITY/SOC/SOC - Metrics.md",
+    "06 - DEFENSIVE SECURITY/SOC/SOC - Operating Model.md",
+    "05 - OFFENSIVE SECURITY/Reporting/Offensive Security Reporting.md",
+    "05 - OFFENSIVE SECURITY/Red Team/Red Team and Adversary Simulation - Overview.md",
+    "03 - INFORMATION SECURITY/Data Security/Data Security Domain.md",
+    "11 - SECURITY PROJECTS/Vulnerability Management/Vulnerability Management - Project Bridge.md",
+    "05 - OFFENSIVE SECURITY/Cloud Security Testing/Cloud Security Testing - Overview.md",
+    "11 - SECURITY PROJECTS/VAPT/VAPT - Project Bridge.md",
+    "11 - SECURITY PROJECTS/Mythic Lab/Mythic Lab - Project Bridge.md",
+    "11 - SECURITY PROJECTS/GOAD/GOAD Project - Risk and Control Bridge.md",
+    "11 - SECURITY PROJECTS/2FA/2FA - Risk and Control Bridge.md",
+    "06 - DEFENSIVE SECURITY/Defensive Security - Index.md",
+    "05 - OFFENSIVE SECURITY/Lateral Movement/Lateral Movement - Concepts.md",
+    "GOAD/00 - Environment/GOAD - Vault Index.md",
+    "05 - OFFENSIVE SECURITY/Privilege Escalation/Privilege Escalation - Concepts.md",
+    "05 - OFFENSIVE SECURITY/Vulnerability Assessment/Vulnerability Assessment - Concepts.md",
+    "05 - OFFENSIVE SECURITY/Enumeration/Enumeration - Concepts.md",
+    "05 - OFFENSIVE SECURITY/Reconnaissance/Reconnaissance - Concepts.md",
+    "05 - OFFENSIVE SECURITY/Offensive Security - Index.md",
+    "04 - SECURITY CONTROLS/Technical Controls/Control - Secrets Management.md",
+    "05 - OFFENSIVE SECURITY/Web Security/Web Application Security - Overview.md",
+    "05 - OFFENSIVE SECURITY/API Security/API Security - Overview.md",
+    "05 - OFFENSIVE SECURITY/Active Directory/Active Directory Security - Overview.md",
+    "05 - OFFENSIVE SECURITY/Active Directory/Active Directory - Detection and Hardening.md",
+    "05 - OFFENSIVE SECURITY/Active Directory/Active Directory - Attack Path Analysis.md",
+    "00 - START HERE/Cybersecurity Operating Model.md",
+    "04 - SECURITY CONTROLS/Physical Controls",
+    "GOAD/02 - Services",
+    "Untitled.canvas",
+    "Untitled.base",
+    "Untitled 1.base"
+  ]
+}
