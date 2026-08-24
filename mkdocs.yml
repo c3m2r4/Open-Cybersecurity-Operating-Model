@@ -1,0 +1,81 @@
+site_name: Open Cybersecurity Operating Model
+site_description: >-
+  An Open Cybersecurity Operating Model connecting business risk, IT risk,
+  information security, security controls, offensive security, defensive
+  security, purple teaming, architecture, DevSecOps, incident response, and
+  executive decision-making.
+site_url: https://c3m2r4.github.io/Open-Cybersecurity-Operating-Model/
+repo_url: https://github.com/c3m2r4/Open-Cybersecurity-Operating-Model
+docs_dir: .
+use_directory_urls: true
+
+theme:
+  name: material
+  language: en
+  logo: images/logo.png
+  favicon: images/favicon.ico
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.inlinehilite
+  - pymdownx.emoji
+  - mdx_wikilinks:
+      build_links: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enabled: true
+      type: timeago
+  - exclude:
+      glob:
+        - '.obsidian/**'
+        - '*.canvas'
+        - 'Untitled.*'
+        - '/*.base'
+        - 'images/private/**'
+
+nav:
+  - Home: README.md
+  - Start Here:
+      - Cybersecurity Operating Model: "00 - START HERE/Cybersecurity Operating Model.md"
+      - Dashboard: "00 - START HERE/Dashboard.md"
+      - Glossary: "00 - START HERE/Glossary.md"
+      - How To Use This Knowledge Base: "00 - START HERE/How To Use This Knowledge Base.md"
+  - Business & Governance: "01 - BUSINESS & GOVERNANCE/"
+  - IT Risk Management: "02 - IT RISK MANAGEMENT/"
+  - Information Security: "03 - INFORMATION SECURITY/"
+  - Security Controls: "04 - SECURITY CONTROLS/"
+  - Offensive Security: "05 - OFFENSIVE SECURITY/"
+  - Defensive Security: "06 - DEFENSIVE SECURITY/"
+  - Purple Team: "07 - PURPLE TEAM/"
+  - Security Architecture: "08 - SECURITY ARCHITECTURE/"
+  - Application & DevSecOps: "09 - APPLICATION & DEVSECOPS/"
+  - Incident & Resilience: "10 - INCIDENT & RESILIENCE/"
+  - Security Projects: "11 - SECURITY PROJECTS/"
+  - Management & Board: "12 - MANAGEMENT & BOARD/"
+  - Playbooks:
+      - GOAD: "🏰 GOAD — GAME OF ACTIVE DIRECTORY — FULL ASSAULT PLAYBOOK.md"
+      - Mythic: "🎯 MYTHIC C2 — COMPLETE OPERATION CYPHER-KNIFE RUNBOOK.md"
+      - Operation Cypher-Knife: "OPERATION CYPHER-KNIFE — COMPLETE RUNBOOK.md"
+
+extra:
+  social:
+    - type: github
+      link: https://github.com/c3m2r4/Open-Cybersecurity-Operating-Model
+  footer: |
+    © Open Cybersecurity Operating Model — curated by c3m2r4
+    This project contains offensive-security and defensive content. Review before publishing.
