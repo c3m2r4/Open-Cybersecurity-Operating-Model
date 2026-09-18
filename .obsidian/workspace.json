@@ -4,24 +4,109 @@
     "type": "split",
     "children": [
       {
-        "id": "9277fb252618bada",
+        "id": "cda50383cb7affac",
         "type": "tabs",
         "children": [
           {
-            "id": "3863f67dc3a0340a",
+            "id": "3b3ae3f46730964a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - INFORMATION SECURITY/Email Security/Email Security Domain.md",
+                "file": "10 - INCIDENT & RESILIENCE/Freeing Disk Space Held by Deleted Files.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Email Security Domain"
+              "title": "Freeing Disk Space Held by Deleted Files"
+            }
+          },
+          {
+            "id": "7ba5b131bcf3b44c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DISCOVER THE EXISTING ENVIRONMENT.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DISCOVER THE EXISTING ENVIRONMENT"
+            }
+          },
+          {
+            "id": "c17ce74a8928e733",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "managing IDS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "managing IDS"
+            }
+          },
+          {
+            "id": "59aabf868b763480",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "pfSense professionally.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "pfSense professionally"
+            }
+          },
+          {
+            "id": "9e00d1a88555a964",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - OFFENSIVE SECURITY/GOAD/🎓 GOAD MASTERCLASS — LESSON 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "🎓 GOAD MASTERCLASS — LESSON 1"
+            }
+          },
+          {
+            "id": "949329660351a0a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bluetooth Operations.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Bluetooth Operations"
+            }
+          },
+          {
+            "id": "81628bc13d7b8fbb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "06 - DEFENSIVE SECURITY/Unbound-Local-DNSSEC-Resolver-Playbook.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Unbound-Local-DNSSEC-Resolver-Playbook"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -55,7 +140,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Unbound Local DNSSEC",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,11 +164,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 497.5
   },
   "right": {
     "id": "694c614b7e780c66",
@@ -99,7 +185,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "🎯 MYTHIC C2 — COMPLETE OPERATION CYPHER-KNIFE RUNBOOK.md",
+                "file": "12 - MANAGEMENT & BOARD/Management and Board - Index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +247,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03 - INFORMATION SECURITY/Email Security/Email Security Domain.md",
+                "file": "12 - MANAGEMENT & BOARD/Management and Board - Index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -170,12 +256,12 @@
               "title": "Outline"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,42 +274,45 @@
       "bases:Create new base": false
     }
   },
-  "active": "3863f67dc3a0340a",
+  "active": "81628bc13d7b8fbb",
   "lastOpenFiles": [
-    "README.md",
-    "99 - TEMPLATES/Template - Purple Team Exercise.md",
-    "07 - PURPLE TEAM/Metrics/Security Validation - Management View.md",
-    "07 - PURPLE TEAM/Metrics/Security Validation Metrics.md",
-    "07 - PURPLE TEAM/Metrics",
-    "07 - PURPLE TEAM/Methodology/Purple Team - Lessons Learned Model.md",
-    "07 - PURPLE TEAM/Framework/Attack Detection Response Matrix.md",
-    "07 - PURPLE TEAM/Framework/MITRE ATT&CK - Overview.md",
-    "07 - PURPLE TEAM/Framework",
-    "07 - PURPLE TEAM/Methodology/Detection Validation - Overview.md",
-    "07 - PURPLE TEAM/Methodology/Control Validation - Maturity Model.md",
-    "07 - PURPLE TEAM/Methodology/Control Validation - Framework.md",
-    "07 - PURPLE TEAM/Methodology/Purple Team - Lifecycle.md",
-    "07 - PURPLE TEAM/Methodology",
-    "06 - DEFENSIVE SECURITY/Threat Intelligence/Threat Intelligence - Overview.md",
-    "06 - DEFENSIVE SECURITY/Digital Forensics/Digital Forensics - Overview.md",
-    "06 - DEFENSIVE SECURITY/Incident Response/Incident Response - Roles and Escalation.md",
-    "06 - DEFENSIVE SECURITY/Incident Response/Incident Response - Lifecycle.md",
-    "06 - DEFENSIVE SECURITY/Threat Hunting/Threat Hunting - Overview.md",
+    "05 - OFFENSIVE SECURITY/Active Directory/Active Directory - Detection and Hardening.md",
+    "Unbound resolver.md",
+    "06 - DEFENSIVE SECURITY/Unbound-Local-DNSSEC-Resolver-Playbook.md",
+    "05 - OFFENSIVE SECURITY/GOAD/🎓 GOAD MASTERCLASS — LESSON 1.md",
+    "05 - OFFENSIVE SECURITY/🎯 MYTHIC C2 — COMPLETE OPERATION CYPHER-KNIFE RUNBOOK.md",
+    "10 - INCIDENT & RESILIENCE/VMware Kernel Module Updater.md",
+    "pfSense professionally.md",
+    "DISCOVER THE EXISTING ENVIRONMENT.md",
+    "ZTOP ZT9101 USB Adapter.md",
+    "Bluetooth Operations.md",
+    "managing IDS.md",
+    "10 - INCIDENT & RESILIENCE/Freeing Disk Space Held by Deleted Files.md",
+    "05 - OFFENSIVE SECURITY/GOAD/Exchange Server 2019 Deployment Failure & Recovery.md",
+    "05 - OFFENSIVE SECURITY/GOAD/Untitled.md",
+    "05 - OFFENSIVE SECURITY/GOAD/single, linear GOAD runbook.md",
+    "05 - OFFENSIVE SECURITY/GOAD/Diagnose and Resolve Exchange RPC Issues (GOAD-SRV01).md",
+    "05 - OFFENSIVE SECURITY/Security Testing Types.md",
     "06 - DEFENSIVE SECURITY/Detection Engineering/Detection Engineering - Quality Model.md",
     "06 - DEFENSIVE SECURITY/Detection Engineering/Detection Engineering - Lifecycle.md",
-    "06 - DEFENSIVE SECURITY/EDR/EDR - Overview.md",
-    "06 - DEFENSIVE SECURITY/SIEM/SIEM - Detection Use Cases.md",
-    "06 - DEFENSIVE SECURITY/SIEM/SIEM - Overview.md",
-    "LICENSE",
-    "06 - DEFENSIVE SECURITY/SOC/SOC - Metrics.md",
     "06 - DEFENSIVE SECURITY/SOC/SOC - Operating Model.md",
-    "05 - OFFENSIVE SECURITY/Reporting/Offensive Security Reporting.md",
-    "05 - OFFENSIVE SECURITY/Red Team/Red Team and Adversary Simulation - Overview.md",
-    "03 - INFORMATION SECURITY/Data Security/Data Security Domain.md",
-    "04 - SECURITY CONTROLS/Physical Controls",
-    "GOAD/02 - Services",
-    "Untitled.canvas",
+    "06 - DEFENSIVE SECURITY/SOC/SOC - Metrics.md",
     "Untitled.base",
-    "Untitled 1.base"
+    "Untitled.canvas",
+    "06 - DEFENSIVE SECURITY/IDS-IPS-SID-Management-Playbook.md",
+    "04 - SECURITY CONTROLS/Security Controls - Index.md",
+    "04 - SECURITY CONTROLS/Technical Controls/Control - Endpoint Detection and Response.md",
+    "04 - SECURITY CONTROLS/Detective Controls/Detective Controls - Index.md",
+    "04 - SECURITY CONTROLS/Pfsense.md",
+    "99 - TEMPLATES/Untitled.canvas",
+    "99 - TEMPLATES/Untitled.base",
+    "99 - TEMPLATES/Untitled 1.base",
+    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/04 - Lessons Learned",
+    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/03 - Findings",
+    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/02 - Evidence",
+    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/01 - Objectives",
+    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/00 - Scope",
+    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife",
+    "05 - OFFENSIVE SECURITY/Mythic/05 - Troubleshooting"
   ]
 }

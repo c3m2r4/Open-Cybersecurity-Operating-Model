@@ -48,14 +48,14 @@ status: MAINTAINED
 > Old notes (`192.168.56.0 24…`, GOAD Assault Playbook) use functional hostnames and different topology.
 > **Verify against the running GOAD environment before execution.** Do not silently trust any single source.
 
-| Host | Documented IP | Documented FQDN | Status |
-|---|---|---|---|
-| King's Landing | `192.168.56.10` | `kingslanding.sevenkingdoms.local` | Documented — verify live |
-| Winterfell | `192.168.56.11` | `winterfell.north.sevenkingdoms.local` | Documented — verify live |
-| Meereen | `192.168.56.12` | `meereen.essos.local` | Documented — verify live |
-| Castle Black | `192.168.56.22` | `castelblack.north.sevenkingdoms.local` | Documented — verify live |
-| Braavos | `192.168.56.23` | `braavos.essos.local` | Documented — verify live |
-| Kali (attacker) | `192.168.56.1` | N/A | Documented on `vmnet7` — verify live |
+| Host            | Documented IP   | Documented FQDN                         | Status                               |
+| --------------- | --------------- | --------------------------------------- | ------------------------------------ |
+| King's Landing  | `192.168.56.10` | `kingslanding.sevenkingdoms.local`      | Documented — verify live             |
+| Winterfell      | `192.168.56.11` | `winterfell.north.sevenkingdoms.local`  | Documented — verify live             |
+| Meereen         | `192.168.56.12` | `meereen.essos.local`                   | Documented — verify live             |
+| Castle Black    | `192.168.56.22` | `castelblack.north.sevenkingdoms.local` | Documented — verify live             |
+| Braavos         | `192.168.56.23` | `braavos.essos.local`                   | Documented — verify live             |
+| Kali (attacker) | `192.168.56.1`  | N/A                                     | Documented on `vmnet7` — verify live |
 
 Full matrix: [[GOAD - IP Hostname Matrix]]
 

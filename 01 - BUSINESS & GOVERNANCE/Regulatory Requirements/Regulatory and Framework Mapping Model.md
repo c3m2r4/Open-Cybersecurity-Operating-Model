@@ -40,12 +40,12 @@ Do not write "compliant with" unless formal compliance evidence exists.
 
 ## Applicability
 
-| Question | Status |
-|---|---|
+| Question                                     | Status |
+| -------------------------------------------- | ------ |
 | Which regulations apply to the organization? | VERIFY |
-| Which systems are in scope? | VERIFY |
-| Who owns compliance evidence? | VERIFY |
-| What assessment standard applies? | VERIFY |
+| Which systems are in scope?                  | VERIFY |
+| Who owns compliance evidence?                | VERIFY |
+| What assessment standard applies?            | VERIFY |
 
 ## Related Notes
 

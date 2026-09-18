@@ -174,13 +174,13 @@ A new callback should appear within `callback_interval` seconds showing:
 
 ## If It Fails
 
-| Symptom | Likely Cause | Action |
-|---|---|---|
-| No callback after 60s | Wrong callback_host IP | Regenerate payload with correct IP |
-| No callback after 60s | HTTP server not running | Start `sudo python3 -m http.server 80` |
-| No callback after 60s | Windows Defender blocked | Disable Defender first |
-| Stager download fails | Wrong stager URL | Verify http://KALI_IP/stager.ps1 returns content |
-| PowerShell execution blocked | Execution policy | Use the `-Exec Bypass` flag |
+| Symptom                      | Likely Cause             | Action                                           |
+| ---------------------------- | ------------------------ | ------------------------------------------------ |
+| No callback after 60s        | Wrong callback_host IP   | Regenerate payload with correct IP               |
+| No callback after 60s        | HTTP server not running  | Start `sudo python3 -m http.server 80`           |
+| No callback after 60s        | Windows Defender blocked | Disable Defender first                           |
+| Stager download fails        | Wrong stager URL         | Verify http://KALI_IP/stager.ps1 returns content |
+| PowerShell execution blocked | Execution policy         | Use the `-Exec Bypass` flag                      |
 
 ---
 
