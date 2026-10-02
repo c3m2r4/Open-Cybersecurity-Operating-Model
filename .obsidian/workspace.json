@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10 - INCIDENT & RESILIENCE/Freeing Disk Space Held by Deleted Files.md",
+                "file": "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Setup & Configuration.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Freeing Disk Space Held by Deleted Files"
+              "title": "Setup & Configuration"
             }
           },
           {
@@ -209,16 +209,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "INSTALL-AND-RUN.md",
+                "file": "11 - SECURITY PROJECTS/Floci Misc Notes/AWS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INSTALL-AND-RUN"
+              "title": "AWS"
             }
           }
-        ],
-        "currentTab": 14
+        ]
       }
     ],
     "direction": "vertical"
@@ -252,7 +251,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Unbound Local DNSSEC",
+                "query": "floc",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -385,8 +384,28 @@
       "bases:Create new base": false
     }
   },
-  "active": "1cc431ffd5d59e9b",
+  "active": "3b3ae3f46730964a",
   "lastOpenFiles": [
+    "11 - SECURITY PROJECTS/Floci Misc Notes/floci-lab.md",
+    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/README.md",
+    "11 - SECURITY PROJECTS/Floci Misc Notes/Build a reusable AWS-style security.md",
+    "11 - SECURITY PROJECTS/Floci Misc Notes/Floci EC2 SSH.md",
+    "11 - SECURITY PROJECTS/Floci Misc Notes/Floci local-cloud.md",
+    "11 - SECURITY PROJECTS/Floci Misc Notes/AWS Script.md",
+    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/floci-lab.sh",
+    "11 - SECURITY PROJECTS/Floci Misc Notes/AWS.md",
+    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 1 - ACCOUNT - IDENTITY.md",
+    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 0 - HOST VALIDATION.md",
+    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 12 - KMS.md",
+    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Master Guide.md",
+    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Floci Architecture.md",
+    "09 - APPLICATION & DEVSECOPS/Application and DevSecOps - Index.md",
+    "99 - TEMPLATES/Template - Penetration Test Finding.md",
+    "08 - SECURITY ARCHITECTURE/Security Architecture - Index.md",
+    "10 - INCIDENT & RESILIENCE/Freeing Disk Space Held by Deleted Files.md",
+    "INSTALL-AND-RUN.md",
+    "README.md",
+    "set Linux's default IPv4 TTL.md",
     "floci-lab.md",
     "00 - INBOX/pfSense professionally.md",
     "00 - INBOX/managing IDS.md",
@@ -394,26 +413,7 @@
     "00 - INBOX/brute.md",
     "00 - INBOX/ZTOP ZT9101 USB Adapter.md",
     "00 - INBOX/Unbound resolver.md",
-    "00 - INBOX/DISCOVER THE EXISTING ENVIRONMENT.md",
-    "00 - INBOX/Brute Force Instagram Account 1.md",
-    "00 - INBOX/Bluetooth Operations.md",
     "00 - INBOX",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Setup & Configuration.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 9 - CLOUDWATCH LOGS.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 8 - EVENTBRIDGE.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 7 - SQS.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 6B - LAMBDA - SERVERLESS.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 6 - DYNAMODB.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 5 - EC2 - COMPUTE.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 4 - VPC - NETWORKING.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 3 - CLOUDTRAIL.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 20 - FINAL RESOURCE DISCOVERY.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 2 - S3.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 19 - SES.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 18 - EKS.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 17 - CLOUD FORMATION.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 16 - STEP FUNCTIONS.md",
-    "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab/Phase 15 - RDS.md",
     "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab",
     "11 - SECURITY PROJECTS/Floci Misc Notes",
     "Floci AWS Local Cloud Lab",
@@ -423,7 +423,6 @@
     "99 - TEMPLATES/Untitled.base",
     "99 - TEMPLATES/Untitled 1.base",
     "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/04 - Lessons Learned",
-    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/03 - Findings",
-    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/02 - Evidence"
+    "05 - OFFENSIVE SECURITY/Operation Cypher-Knife/03 - Findings"
   ]
 }
