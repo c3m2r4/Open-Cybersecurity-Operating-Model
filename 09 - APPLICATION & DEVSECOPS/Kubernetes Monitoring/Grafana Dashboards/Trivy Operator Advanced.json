@@ -1,0 +1,1220 @@
+{
+  "uid": "trivy-operator-overview",
+  "title": "Trivy Operator Security Posture & Vulnerability Intelligence",
+  "tags": [
+    "trivy",
+    "security",
+    "kubernetes"
+  ],
+  "timezone": "browser",
+  "schemaVersion": 41,
+  "version": 6,
+  "refresh": "30s",
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Critical",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(trivy_image_vulnerabilities{severity=\"Critical\", exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "description": "Current critical vulnerability findings in matching image reports."
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "High",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(trivy_image_vulnerabilities{severity=\"High\", exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 3,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "description": "Current high severity vulnerability findings."
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Medium",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(trivy_image_vulnerabilities{severity=\"Medium\", exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 6,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "description": "Current medium severity vulnerability findings."
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Low",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(trivy_image_vulnerabilities{severity=\"Low\", exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 9,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "description": "Current low severity vulnerability findings."
+    },
+    {
+      "id": 5,
+      "type": "stat",
+      "title": "Critical + High",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(trivy_image_vulnerabilities{severity=~\"Critical|High\", exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "description": "Priority remediation queue: combined critical and high findings."
+    },
+    {
+      "id": 6,
+      "type": "stat",
+      "title": "Affected images",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "count(count by(image_digest)(trivy_image_vulnerabilities{severity=~\"Critical|High\", exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\"} > 0))",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 15,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 5
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "description": "Unique image digests with at least one critical or high finding."
+    },
+    {
+      "id": 7,
+      "type": "stat",
+      "title": "Configuration audit failures",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(trivy_resource_configaudits{exported_namespace=~\"$namespace\", severity=~\"$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 18,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "description": "Failed configuration audit checks across selected workload namespaces."
+    },
+    {
+      "id": 8,
+      "type": "stat",
+      "title": "Exposed secrets",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(trivy_image_exposedsecrets{exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\", severity=~\"$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 21,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      },
+      "description": "Secret findings from scanned container images. Zero means no exposed secrets were reported."
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "Findings",
+            "drawStyle": "line"
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 5,
+        "w": 8,
+        "h": 9
+      },
+      "id": 9,
+      "options": {
+        "orientation": "horizontal",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "showValue": "always",
+        "stacking": "normal",
+        "legend": {
+          "showLegend": true,
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by(severity)(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\", severity=~\"$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "title": "Image vulnerability findings by severity",
+      "type": "barchart",
+      "description": "Current finding counts grouped by severity."
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "Findings",
+            "drawStyle": "line"
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "x": 8,
+        "y": 5,
+        "w": 8,
+        "h": 9
+      },
+      "id": 10,
+      "options": {
+        "orientation": "horizontal",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "showValue": "always",
+        "stacking": "normal",
+        "legend": {
+          "showLegend": true,
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by(exported_namespace,severity)(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\", severity=~\"Critical|High|$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{exported_namespace}} \u00b7 {{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "title": "Critical and high findings by namespace",
+      "type": "barchart",
+      "description": "Compare high-priority image risk across namespaces."
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "Findings",
+            "drawStyle": "line"
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "x": 16,
+        "y": 5,
+        "w": 8,
+        "h": 9
+      },
+      "id": 11,
+      "options": {
+        "orientation": "auto",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "showValue": "never",
+        "stacking": "normal",
+        "legend": {
+          "showLegend": true,
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by(severity)(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\", severity=~\"$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "title": "Image vulnerability severity mix",
+      "type": "piechart",
+      "description": "Severity share for the selected scope."
+    },
+    {
+      "id": 12,
+      "type": "table",
+      "title": "Highest-risk images \u00b7 critical and high",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "topk(20, sum by(exported_namespace,container_name,image_registry,image_repository,image_tag,image_digest)(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\", severity=~\"Critical|High\"}))",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 14,
+        "w": 24,
+        "h": 10
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "sortBy": [],
+        "footer": {
+          "show": true,
+          "reducer": [
+            "sum"
+          ],
+          "countRows": true
+        }
+      },
+      "description": "Ranked image digests by critical and high findings. Digest is included to distinguish rebuilt images with the same tag."
+    },
+    {
+      "id": 13,
+      "type": "table",
+      "title": "Vulnerability findings by workload and severity",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by(exported_namespace,resource_kind,resource_name,container_name,image_repository,image_tag,severity)(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\", severity=~\"$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 24,
+        "w": 24,
+        "h": 11
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "sortBy": [],
+        "footer": {
+          "show": true,
+          "reducer": [
+            "sum"
+          ],
+          "countRows": true
+        }
+      },
+      "description": "Workload-level counts. Open the matching VulnerabilityReport for CVE IDs, package versions, fixed versions, CVSS and advisory links."
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "Findings",
+            "drawStyle": "line"
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 35,
+        "w": 12,
+        "h": 10
+      },
+      "id": 14,
+      "options": {
+        "orientation": "horizontal",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "showValue": "always",
+        "stacking": "normal",
+        "legend": {
+          "showLegend": true,
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by(exported_namespace,severity)(trivy_resource_configaudits{exported_namespace=~\"$namespace\", severity=~\"$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{exported_namespace}} \u00b7 {{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "title": "Configuration audit failures by namespace and severity",
+      "type": "barchart",
+      "description": "Failed Kubernetes configuration checks reported by Trivy Operator."
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "Findings",
+            "drawStyle": "line"
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 35,
+        "w": 12,
+        "h": 10
+      },
+      "id": 15,
+      "options": {
+        "orientation": "horizontal",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0,
+        "showValue": "always",
+        "stacking": "normal",
+        "legend": {
+          "showLegend": true,
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by(title,status)(trivy_cluster_compliance)",
+          "editorMode": "code",
+          "legendFormat": "{{title}} \u00b7 {{status}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "title": "Cluster compliance checks \u00b7 pass vs fail",
+      "type": "barchart",
+      "description": "Compliance check counts grouped by benchmark and result. A pass/fail count is a check count, not a percentage."
+    },
+    {
+      "id": 16,
+      "type": "table",
+      "title": "Infrastructure assessment findings by resource",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by(exported_namespace,resource_kind,resource_name,severity)(trivy_resource_infraassessments{exported_namespace=~\"$namespace\", severity=~\"$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 45,
+        "w": 12,
+        "h": 10
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "sortBy": [],
+        "footer": {
+          "show": true,
+          "reducer": [
+            "sum"
+          ],
+          "countRows": true
+        }
+      },
+      "description": "Infrastructure assessment counts by Kubernetes resource and severity."
+    },
+    {
+      "id": 17,
+      "type": "table",
+      "title": "RBAC assessment findings by resource",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by(exported_namespace,resource_kind,name,severity)(trivy_role_rbacassessments{exported_namespace=~\"$namespace\", severity=~\"$severity\"})",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 45,
+        "w": 12,
+        "h": 10
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "sortBy": [],
+        "footer": {
+          "show": true,
+          "reducer": [
+            "sum"
+          ],
+          "countRows": true
+        }
+      },
+      "description": "Namespaced Role assessment findings. ClusterRole results are available in trivy_clusterrole_clusterrbacassessments and can be queried separately."
+    },
+    {
+      "id": 18,
+      "type": "table",
+      "title": "Images with exposed secret findings",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "topk(20, sum by(exported_namespace,container_name,image_repository,image_tag,severity)(trivy_image_exposedsecrets{exported_namespace=~\"$namespace\", container_name=~\"$container\", image_repository=~\"$image\", severity=~\"$severity\"} > 0))",
+          "editorMode": "code",
+          "legendFormat": "{{severity}}",
+          "instant": true,
+          "range": false,
+          "format": "table"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 55,
+        "w": 24,
+        "h": 9
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "options": {
+        "showHeader": true,
+        "cellHeight": "sm",
+        "sortBy": [],
+        "footer": {
+          "show": true,
+          "reducer": [
+            "sum"
+          ],
+          "countRows": true
+        }
+      },
+      "description": "Only non-zero exposed-secret series are shown. Review the ExposedSecretReport object for detector and file details; handle any secret values as sensitive."
+    },
+    {
+      "id": 19,
+      "type": "text",
+      "title": "CVE, package, fix version and advisory drill-down",
+      "gridPos": {
+        "x": 0,
+        "y": 64,
+        "w": 24,
+        "h": 10
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "Prometheus metrics power the charts above and contain aggregate counts by severity, workload, image tag and digest. **They do not include individual CVE IDs or package names.** Those details are stored in Trivy `VulnerabilityReport` custom resources.\n\n```bash\n# List report names and namespaces\nkubectl get vulnerabilityreports -A\n\n# Show full CVEs, affected package, installed/fixed versions, score and advisory links\nkubectl get vulnerabilityreport <report-name> -n <namespace> -o json | jq '.report.vulnerabilities[] | {severity, vulnerabilityID, title, package: .resource, installedVersion, fixedVersion, score, primaryLink}'\n\n# Export all reports as TSV for sorting / spreadsheet review\nkubectl get vulnerabilityreports -A -o json | jq -r '.items[] as $r | $r.report.vulnerabilities[] | [$r.metadata.namespace,$r.metadata.name,.severity,.vulnerabilityID,.title,.resource,.installedVersion,.fixedVersion,(.score // \"\"),.primaryLink] | @tsv'\n\n# Inspect a configuration audit finding or an exposed-secret report\nkubectl get configauditreports -A\nkubectl get exposedsecretreports -A\nkubectl describe configauditreport <report-name> -n <namespace>\n```\n\nMatch report names to the workload and namespace in the tables above. Secret reports may contain sensitive paths or values; do not paste their contents into tickets or chat."
+      }
+    }
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "namespace",
+        "label": "Namespace",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(trivy_image_vulnerabilities, exported_namespace)",
+        "query": {
+          "query": "label_values(trivy_image_vulnerabilities, exported_namespace)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "sort": 1,
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": false,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "options": [],
+        "hide": 0,
+        "skipUrlSync": false
+      },
+      {
+        "name": "container",
+        "label": "Container",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\"}, container_name)",
+        "query": {
+          "query": "label_values(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\"}, container_name)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "sort": 1,
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": false,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "options": [],
+        "hide": 0,
+        "skipUrlSync": false
+      },
+      {
+        "name": "image",
+        "label": "Image repository",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\",container_name=~\"$container\"}, image_repository)",
+        "query": {
+          "query": "label_values(trivy_image_vulnerabilities{exported_namespace=~\"$namespace\",container_name=~\"$container\"}, image_repository)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "sort": 1,
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "options": [],
+        "hide": 0,
+        "skipUrlSync": false
+      },
+      {
+        "name": "severity",
+        "label": "Severity",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(trivy_image_vulnerabilities, severity)",
+        "query": {
+          "query": "label_values(trivy_image_vulnerabilities, severity)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "sort": 1,
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": true,
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "options": [],
+        "hide": 0,
+        "skipUrlSync": false
+      }
+    ]
+  },
+  "description": "Advanced Trivy Operator triage: severity posture, vulnerable images, workload and namespace risk, configuration audit results, compliance, secrets, and links to full CVE report records.",
+  "graphTooltip": 2
+}
