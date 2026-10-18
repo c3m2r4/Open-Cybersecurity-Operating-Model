@@ -25,3 +25,8 @@ Use this area for secure development, pipeline security, testing, dependency ris
 | CI-CD Security | Build, release, runner, and artifact protection |
 | Container Security | Image, registry, runtime, and orchestration controls |
 
+## Kubernetes Lab Operations
+
+- [[Kind DevSecOps Monitoring Playbook]] — service inventory, access commands, metrics, and safe operations.
+- [[Kind DevSecOps Monitoring Runbook]] — routine checks and troubleshooting procedures.
+
