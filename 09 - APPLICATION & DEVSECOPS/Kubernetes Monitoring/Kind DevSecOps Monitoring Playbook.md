@@ -281,6 +281,34 @@ curl -fsSG http://127.0.0.1:19090/api/v1/query \
 
 **Why:** The catalog dashboard expects cAdvisor metric names that are not emitted for host Docker containers in this setup. The adapted panels use the metrics that Prometheus actually scrapes here. This source does not currently expose container restart counts; use the inventory/state panels for lifecycle visibility.
 
+## 9. Unified DevSecOps dashboard and dashboard health
+
+Use [DevSecOps Control Plane Advanced](http://localhost:13000/d/devsecops-control-plane-advanced/devsecops-control-plane-advanced?orgId=1&refresh=30s) as the main landing page. It combines cluster readiness, pods, Prometheus target health, alerts, Trivy findings, Falco events, Kubernetes resource/network trends, etcd, and host Docker containers. It links to the component dashboards for investigation. [Alertmanager Advanced](http://localhost:13000/d/eea-9_sik/alertmanager-advanced?orgId=1&refresh=30s) replaces HA peer panels with alert delivery, silences, reload health, and latency metrics suited to this single-replica cluster.
+
+The Grafana dashboard variables now default to **All** and use regex matching, so the single cluster and its namespace/pod data appear without a manual selection. Prometheus ServiceMonitor endpoints carry the target label `cluster=kind-devsecops`, which populates the cluster selector. The selected dashboard targets were queried against Prometheus after the change; they returned data. The dashboard JSON exports are in `Kubernetes Monitoring/Grafana Dashboards/` in this vault.
+
+```bash
+# Confirm the cluster label is visible to Grafana's cluster selector.
+curl -fsS http://127.0.0.1:19090/api/v1/label/cluster/values | python3 -m json.tool
+
+# Check all ServiceMonitors selected by the monitoring release and their endpoint relabelings.
+kubectl get servicemonitors -A -l release=monitoring -o json | python3 -c \
+  'import json,sys; d=json.load(sys.stdin); [(print(x["metadata"]["namespace"],x["metadata"]["name"], [e.get("relabelings",[]) for e in x["spec"].get("endpoints",[])])) for x in d["items"]]'
+
+# List Grafana dashboard ConfigMaps and confirm the reload sidecar is healthy.
+kubectl get configmaps -n default -l grafana_dashboard=1
+kubectl logs -n default deployment/monitoring-grafana -c grafana-sc-dashboard --since=10m
+
+# Check cluster, alert, security, and container overview metrics directly.
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(kube_node_status_condition{condition="Ready",status="true"})'
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(ALERTS{alertstate="firing"}) or vector(0)'
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="Critical"})'
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(rate(falcosecurity_falco_rules_matches_total[5m]))'
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=count(docker_container_info)'
+```
+
+The dashboard updates changed Grafana ConfigMaps directly. A later Helm upgrade can replace chart-managed ServiceMonitor relabelings or dashboards; rerun the validation commands afterward. A blank persistent-volume view is expected while the cluster has no PVs or PVCs.
+
 ## Related notes
 
 - [[Kind DevSecOps Monitoring Runbook]]
