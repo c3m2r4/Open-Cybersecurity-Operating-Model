@@ -256,6 +256,31 @@ docker inspect devsecops-control-plane
 
 **Why:** Stopping/removing the kind node container can interrupt or destroy the entire cluster and its local state.
 
+## 8. Advanced Docker container dashboard
+
+Open the provisioned Grafana dashboard at [Docker Containers Advanced](http://localhost:13000/d/docker-containers-overview/docker-containers-advanced?orgId=1&refresh=30s). It is adapted from [Grafana Labs dashboard 21743](https://grafana.com/grafana/dashboards/21743-cadvisor-exporter-docker-containers-overview/) to the local `docker_container_*` Prometheus metrics. It provides container totals and state, an inventory, CPU and memory usage, memory-limit percentage, network rates, and block-device I/O. Use the **Container** selector to filter the time-series panels. Portainer is linked from the dashboard for container actions.
+
+The adapted dashboard JSON is saved at `Kubernetes Monitoring/Grafana Dashboards/Docker Containers Advanced.json` in this vault. Kubernetes provisions it from ConfigMap `default/docker-container-grafana-dashboard`; the Grafana dashboard sidecar reloads changes to that ConfigMap.
+
+```bash
+# Confirm that the dashboard is provisioned and inspect its panel count.
+kubectl get configmap docker-container-grafana-dashboard -n default \
+  -o jsonpath='{.data.docker-containers\.json}' | python3 -c \
+  'import json,sys; d=json.load(sys.stdin); print(d["title"], "panels:", len(d["panels"]))'
+
+# Check that the Grafana pod and dashboard sidecar are healthy and reloaded it.
+kubectl get pods -n default | grep grafana
+kubectl logs -n default deployment/monitoring-grafana -c grafana-sc-dashboard --since=10m
+
+# Check that Prometheus has current Docker container metrics.
+curl -fsSG http://127.0.0.1:19090/api/v1/query \
+  --data-urlencode 'query=count(docker_container_info)'
+curl -fsSG http://127.0.0.1:19090/api/v1/query \
+  --data-urlencode 'query=docker_container_cpu_percent'
+```
+
+**Why:** The catalog dashboard expects cAdvisor metric names that are not emitted for host Docker containers in this setup. The adapted panels use the metrics that Prometheus actually scrapes here. This source does not currently expose container restart counts; use the inventory/state panels for lifecycle visibility.
+
 ## Related notes
 
 - [[Kind DevSecOps Monitoring Runbook]]
