@@ -429,6 +429,7 @@
   },
   "active": "c492010975babf53",
   "lastOpenFiles": [
+    "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Kali Command Center - Discovery and Proposed Architecture.md",
     "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Grafana Dashboards/Trivy Operator Advanced.json",
     "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Grafana Dashboards/Alertmanager Advanced.json",
     "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Grafana Dashboards/DevSecOps Control Plane Advanced.json",
@@ -439,7 +440,6 @@
     "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Grafana Dashboards/Kubernetes _ Networking _ Cluster.json",
     "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Grafana Dashboards/Kubernetes _ Kubelet.json",
     "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Grafana Dashboards/Kubernetes _ Controller Manager.json",
-    "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Grafana Dashboards/Kubernetes _ Compute Resources _ Workload.json",
     "09 - APPLICATION & DEVSECOPS/Application and DevSecOps - Index.md",
     "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Kind DevSecOps Monitoring Runbook.md",
     "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Kind DevSecOps Monitoring Playbook.md",
