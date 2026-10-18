@@ -8,7 +8,7 @@
   ],
   "timezone": "browser",
   "schemaVersion": 41,
-  "version": 6,
+  "version": 7,
   "refresh": "30s",
   "time": {
     "from": "now-24h",
@@ -574,6 +574,10 @@
         "xTickLabelSpacing": 0,
         "showValue": "always",
         "stacking": "normal",
+        "groupWidth": 0.7,
+        "barWidth": 0.8,
+        "barRadius": 0,
+        "fullHighlight": false,
         "legend": {
           "showLegend": true,
           "displayMode": "list",
@@ -630,6 +634,10 @@
         "xTickLabelSpacing": 0,
         "showValue": "always",
         "stacking": "normal",
+        "groupWidth": 0.7,
+        "barWidth": 0.8,
+        "barRadius": 0,
+        "fullHighlight": false,
         "legend": {
           "showLegend": true,
           "displayMode": "list",
@@ -681,20 +689,27 @@
       },
       "id": 11,
       "options": {
-        "orientation": "auto",
-        "xTickLabelRotation": 0,
-        "xTickLabelSpacing": 0,
-        "showValue": "never",
-        "stacking": "normal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "pieType": "donut",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
         "legend": {
           "showLegend": true,
           "displayMode": "list",
           "placement": "bottom"
         },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
+        "displayLabels": [
+          "name",
+          "percent"
+        ]
       },
       "targets": [
         {
@@ -846,6 +861,10 @@
         "xTickLabelSpacing": 0,
         "showValue": "always",
         "stacking": "normal",
+        "groupWidth": 0.7,
+        "barWidth": 0.8,
+        "barRadius": 0,
+        "fullHighlight": false,
         "legend": {
           "showLegend": true,
           "displayMode": "list",
@@ -902,6 +921,10 @@
         "xTickLabelSpacing": 0,
         "showValue": "always",
         "stacking": "normal",
+        "groupWidth": 0.7,
+        "barWidth": 0.8,
+        "barRadius": 0,
+        "fullHighlight": false,
         "legend": {
           "showLegend": true,
           "displayMode": "list",

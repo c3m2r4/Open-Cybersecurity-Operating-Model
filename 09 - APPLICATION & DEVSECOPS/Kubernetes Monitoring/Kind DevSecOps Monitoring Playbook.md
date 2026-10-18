@@ -86,7 +86,7 @@ Open these URLs on the **same host where the port-forward command is running**:
 - Prometheus: [http://localhost:19090](http://localhost:19090)
 - Alertmanager: [http://localhost:19093](http://localhost:19093)
 - Kubernetes Dashboard: [https://localhost:8443](https://localhost:8443) (the browser may warn about its local certificate)
-- Trivy dashboard: [http://localhost:13000/d/trivy-operator-overview/trivy-operator-overview?orgId=1&from=now-24h&to=now&timezone=browser&refresh=30s](http://localhost:13000/d/trivy-operator-overview/trivy-operator-overview?orgId=1&from=now-24h&to=now&timezone=browser&refresh=30s)
+- Trivy security posture and vulnerability intelligence: [http://localhost:13000/d/trivy-operator-overview/trivy-operator-overview?orgId=1&from=now-24h&to=now&timezone=browser&refresh=30s](http://localhost:13000/d/trivy-operator-overview/trivy-operator-overview?orgId=1&from=now-24h&to=now&timezone=browser&refresh=30s)
 - Falco dashboard: open Grafana, then use Dashboards search for “Falco”.
 
 **Why:** A `ClusterIP` is reachable only inside Kubernetes. Port-forward bridges one local host port to that service; it is temporary and ends if the command or terminal exits. `--address 127.0.0.1` keeps the forwarded port local to this machine.
@@ -313,3 +313,17 @@ The dashboard updates changed Grafana ConfigMaps directly. A later Helm upgrade 
 
 - [[Kind DevSecOps Monitoring Runbook]]
 - [[Application and DevSecOps - Index]]
+
+
+## Trivy Operator advanced dashboard
+
+The Trivy dashboard at the link above now includes severity KPIs, critical/high image counts, vulnerable image and workload rankings, namespace severity views, configuration audit results, cluster compliance, infrastructure/RBAC assessments, exposed-secret findings, and namespace/container/image/severity selectors. Dashboard JSON export: `Kubernetes Monitoring/Grafana Dashboards/Trivy Operator Advanced.json`. Grafana provisions it from ConfigMap `default/trivy-operator-grafana-dashboard`; the dashboard sidecar reloads ConfigMap changes.
+
+Prometheus metrics provide aggregate counts and workload/image labels. They do **not** expose individual CVE IDs or package metadata. For CVE IDs, package names, installed/fixed versions, scores, and advisory URLs, inspect the matching `VulnerabilityReport` from the dashboard's final panel:
+
+```bash
+kubectl get vulnerabilityreports -A
+kubectl get vulnerabilityreport <report-name> -n <namespace> -o json | jq '.report.vulnerabilities[] | {severity, vulnerabilityID, title, package: .resource, installedVersion, fixedVersion, score, primaryLink}'
+```
+
+The installed reports currently do not populate the optional prose description field; use the linked upstream advisory (`primaryLink`) for vulnerability details.
