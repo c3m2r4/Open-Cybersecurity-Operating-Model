@@ -430,6 +430,8 @@
   "active": "c492010975babf53",
   "lastOpenFiles": [
     "09 - APPLICATION & DEVSECOPS/Application and DevSecOps - Index.md",
+    "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Kind DevSecOps Monitoring Runbook.md",
+    "09 - APPLICATION & DEVSECOPS/Kubernetes Monitoring/Kind DevSecOps Monitoring Playbook.md",
     "Why spend hundreds on AWS sandbox environments.md",
     "Project AEGIS.md",
     "AEGIS server.md",
@@ -454,8 +456,6 @@
     "INSTALL-AND-RUN.md",
     "README.md",
     "set Linux's default IPv4 TTL.md",
-    "floci-lab.md",
-    "00 - INBOX/pfSense professionally.md",
     "00 - INBOX",
     "11 - SECURITY PROJECTS/Floci AWS Local Cloud Lab",
     "11 - SECURITY PROJECTS/Floci Misc Notes",

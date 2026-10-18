@@ -174,6 +174,49 @@ curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy
 
 **Why:** Prometheus target health verifies scraping; direct metric queries distinguish missing source data from a dashboard problem. Trivy’s report objects can exist before metrics update. `No data` means the query returned no series; it is not equivalent to zero findings.
 
+### Run the checks from the recent Lens review
+
+This is a copy-ready read-only sequence covering cluster health, workloads, services, Trivy reports, and Prometheus metrics. The Prometheus port-forward must already be running in another terminal for the `curl` commands.
+
+```bash
+# Confirm the active cluster and API/node health.
+kubectl config current-context
+kubectl cluster-info
+kubectl get nodes -o wide
+
+# Check all pods, controller readiness, services, and recent cluster events.
+kubectl get pods -A -o wide
+kubectl get deploy,sts,ds -A
+kubectl get services -A
+kubectl get events -A --sort-by=.lastTimestamp | tail -50
+
+# Review Trivy scan reports across all namespaces.
+kubectl get vulnerabilityreports -A
+kubectl get configauditreports -A
+kubectl get exposedsecretreports -A
+kubectl get clustercompliancereports -A
+
+# Check Prometheus targets in a readable format.
+curl -fsS http://127.0.0.1:19090/api/v1/targets | python3 -m json.tool | less
+
+# Get cluster-wide Trivy vulnerability totals by severity.
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="Critical"})'
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="High"})'
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="Medium"})'
+curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="Low"})'
+```
+
+At the time of the terminal check shared on 2026-10-17, Prometheus returned **3 Critical, 429 High, 349 Medium, and 74 Low** across the cluster. These counts change as scans and workloads change; rerun the queries for current values. The Lens detail for `docker.io/falcosecurity/falco:0.44.1` showed an image-specific result of **3 High, 9 Medium, and 5 Low**, scanned about 11 minutes before that screenshot. Image-specific counts and cluster-wide totals have different scopes.
+
+To find the report associated with the Falco image, list reports in `default`, identify the relevant name, then describe it:
+
+```bash
+kubectl get vulnerabilityreports -n default
+kubectl describe vulnerabilityreport <report-name> -n default
+```
+
+The report name varies by pod/image; use the name returned by the first command. Do not treat the screenshot values as current scan results.
+
 ## 6. Safe recovery actions
 
 Start with read-only diagnosis. If a deployment needs a restart and you have confirmed that restarting is appropriate:

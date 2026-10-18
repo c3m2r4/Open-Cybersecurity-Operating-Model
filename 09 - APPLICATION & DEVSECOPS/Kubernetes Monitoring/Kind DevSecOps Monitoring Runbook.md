@@ -98,6 +98,17 @@ kubectl get services -A
    kubectl get clustercompliancereports -A
    ```
 
+7. To check the same cluster-wide totals that were validated from the terminal, run all four queries (the Prometheus forward from step 2 must still be open):
+
+   ```bash
+   curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="Critical"})'
+   curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="High"})'
+   curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="Medium"})'
+   curl -fsSG http://127.0.0.1:19090/api/v1/query --data-urlencode 'query=sum(trivy_image_vulnerabilities{severity="Low"})'
+   ```
+
+   The last verified sample was 3 Critical, 429 High, 349 Medium, and 74 Low. This is a time-specific cluster-wide snapshot; values can change. Lens showed Falco image `docker.io/falcosecurity/falco:0.44.1` separately with 3 High, 9 Medium, and 5 Low at the time of its scan. For the underlying report, run `kubectl get vulnerabilityreports -n default`, then `kubectl describe vulnerabilityreport <report-name> -n default` with the listed report name.
+
 Do not treat `No data` as a zero count. Check Grafana’s time range and refresh after metrics have been scraped.
 
 ## D. Pod is restarting, pending, or not ready
